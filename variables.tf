@@ -224,4 +224,5 @@ variable "system_controls" {
 variable "containers_map" {
   type = map(string)
   description = "Map of container to container url. Overrides container_name and container_image"
+	default = {}
 }

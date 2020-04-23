@@ -22,7 +22,7 @@ locals {
   # https://www.terraform.io/docs/configuration/expressions.html#null
   final_environment_vars = length(local.sorted_environment_vars) > 0 ? local.sorted_environment_vars : local.null_value
 
-  container_definition = [ for key in local.cont_map :
+  container_definition = [ for key in keys(local.cont_map):
   {
     name                   = key
     image                  = lookup(local.cont_map, key, var.container_image)
