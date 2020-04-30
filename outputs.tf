@@ -8,6 +8,10 @@ output "json_map" {
   value       = local.json_map
 }
 
+output "object" {
+  value = [for elem in local.container_definition : elem]
+}
+
 
 output "map" {
   value = local.cont_map
